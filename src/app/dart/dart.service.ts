@@ -6,8 +6,11 @@ import { Dart } from './dart';
 @Injectable({
   providedIn: 'root'
 })
-export class DartService {insertUrl = "http://localhost:3000/dart_create";
-selectUrl = "http://localhost:3000/dart_select";
+export class DartService {
+insertUrl = 'http://localhost:3000/dart_create';
+selectUrl = 'http://localhost:3000/dart_select';
+dayDartUrl = 'http://localhost:3000/dart_selectSingle';
+updateDartUrl = 'http://localhost:3000/dart_update';
 constructor(private http: HttpClient) { }
 
 create(darts: Dart[]) {
@@ -20,7 +23,13 @@ getDarts():Observable<any>{
   return this.http.get(this.selectUrl);
 }
 
-getDayDart(dart){
-  return this.http.get("http://localhost:3000/selectSingleReport", dart);
+getDayDart(dart: Dart): Observable<any> {
+  var url = this.dayDartUrl + '/' + dart.userName + '&' + dart.taskDate;
+
+  console.log('URL' + url);
+  return this.http.get<any>(url);
+}
+updateDarts(darts: Dart[]) {
+  return this.http.post<any>(this.updateDartUrl, darts);
 }
 }

@@ -14,6 +14,10 @@ export class MenuPage implements OnInit {
       url: '/menu/dart'
     },
     {
+      title: 'Diary',
+      url: '/menu/diary'
+    },
+    {
       title: 'Report',
       url: '/menu/report'
     }

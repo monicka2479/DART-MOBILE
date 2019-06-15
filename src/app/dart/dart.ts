@@ -5,6 +5,7 @@ export class Dart{
   public fromTime: string,
   public toTime: string,
   public plannedTask: string,
+  public actualTask: string,
   public remarks: string
   ){}
 }

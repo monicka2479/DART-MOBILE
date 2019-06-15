@@ -15,6 +15,10 @@ const routes: Routes = [
         loadChildren: '../dart/dart.module#DartPageModule'
       },
       {
+        path: 'diary',
+        loadChildren: '../diary/diary.module#DiaryPageModule'
+      },
+      {
         path: 'report',
         loadChildren: '../report/report.module#ReportPageModule'
       }
@@ -22,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'menu/dart',
+    redirectTo: 'menu/diary',
   }
 ];
  
